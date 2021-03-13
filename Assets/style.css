@@ -1,0 +1,15 @@
+/* htmlcolorcodes.com */
+
+:root {
+    background-color: #fbfcfc;
+    font-size: 10px;  /* 62.5% */
+}
+
+
+/* all elements (univeral selector)- */
+* {
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    
+}
