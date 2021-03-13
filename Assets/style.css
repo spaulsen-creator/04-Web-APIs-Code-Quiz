@@ -2,14 +2,40 @@
 
 :root {
     background-color: #fbfcfc;
-    font-size: 10px;  /* 62.5% */
+    font-size: 62.5%;  /* 62.5% */
 }
 
 
 /* all elements (univeral selector)- */
 * {
     box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
-    
+    font-family: 'Roboto', sans-serif;
 }
+h1 {
+    font-size: 5rem;
+
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    padding: 6px;
+    width: 30%;
+    height: 30%;
+    background-color:rgb(23, 106, 214);
+    text-shadow: 2px 1px 4px #fff;
+    opacity: .85;
+  }
+  
+  .card:hover {
+    opacity: 1;
+  }
