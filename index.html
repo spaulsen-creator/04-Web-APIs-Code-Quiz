@@ -13,27 +13,32 @@
 
 <body>
     <div>
-        <a href="highscores.html" class="scores">Highscores</a>
+        <!-- highscores.html-->
+        <a href="#" class="score">Highscores</a>
     </div>
-        <div id="timer1">
-            <span class="timer-text">
-                <p>Time:<span id="time">0</span> </p>
-            </span>            
+        <div class="time"> 
+             <p>Time:<span id="timeLeft">0</span> </p>
         </div>
     <main>
         <section class="container">
             <h1>Ready to take a quiz?</h1>
             <p id="intro">You will have 90 seconds to complete the quiz. <br>For every question missed you will lose 10 seconds off the timer.</br> Finish within the time given to win!</p>
-            <button class="start-button">Start Quiz</button>
+            <button class="start-button" onclick="start()">Start Quiz</button>
         </section>
 
+        <div id="quiz-content" class="hide">
+            <h2 id="question">placeholder</h2>
+            <button id="option">Options</button>
+            <button id="option">Options</button>
+            <button id="option">Options</button>
+            <button id="option">Options</button>
+        </div>
 
-        <!--Link to highscore button
-        <section id="highscores">
-            <a href= "highscores.html">
-            
-        </section>
-        -->
+        <divid+"end-game" class="hide">
+            <h2 id="player-score">Your score is:</h2>
+            <input type="text" id="name" placeholder="Enter your initials">
+            <button onclick="setScore()">Save your score!</button>
+        </div>
         
     </main>
 
