@@ -26,5 +26,12 @@ console.log("hello");
 
 //var x: document.getElementById
 
+//Highscore-
+
+localStorage.setItem('name', 'Shawn');  //look for the two values
+let myName = localStorage.getItem('name');
+myName
+
+
 
 
