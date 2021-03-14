@@ -1,5 +1,35 @@
 console.log("hello");
 
+var timeLeft = 0;
+var timer;
+var quizdata = [
+    {
+        question: "A short section of code written to perform a task is:",
+        option: ["<Arrays>", "<Boolean>", "<Function>", "<Number>"],
+        correct: "<Function>"
+    },
+    {
+        question: "Standard mark-up language for creating webpages is:",
+        option: ["<HTML>", "<CSS>", "<JavaScript>", "<Bootstrap>"],
+        correct: "<HTML>"
+    },
+    {
+        question: "To style a webpage you use:",
+        option: ["<Padding>", "<Flex-box>", "<Templates>", "<CSS>"],
+        correct: "<CSS>"
+    },
+    {
+        question: "Javascript can:",
+        option: ["<Change html content>", "<Change html styles>", "<Change html attribute values>", "<All of the above>"],
+        correct: "<All of the above>"
+    },
+    {
+        question: "If your code does not work, what should you do:",
+        option: ["<Burn your computer, then burn the ashes>", "<Run around and scream madly>", "<Debug and check for any errors>", "<Sit and wait for it to fix itself>"],
+        correct: "<Debug and check for any errors>"
+    },
+]
+
 
 //localStorage.setItem('name', 'Shawn');  //look for the two values
 //let myName = localStorage.getItem('name');
