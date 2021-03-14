@@ -2,23 +2,52 @@
 
 :root {
     background-color: #fbfcfc;
-    font-size: 62.5%;  /* 62.5% */
+    font-size: 62.5%;  
 }
 
-
-/* all elements (univeral selector)- */
 * {
-/* 
-    box-sizing: border-box; */
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-h1 {
-    font-size: 5rem;
+
+a.scores {
+    font-size: 2rem;
 }
 
+#timer1 {
+    font-size: 2rem;
+}   
 
-.container {
+h1 {
+    font-size: 5rem;
+    color: #9900e6;
+    text-shadow: 2px 2px 2px black;
+
+}
+
+p#intro {
+    font-size: 2rem;
+    padding: 15px;
+    
+}
+
+button.start-button {
+    font-size: 2rem;
+    color: #fbfcfc;
+    border: 2px solid black;
+    opacity: 1;
+    background-color: #9900e6;
+    padding: 11px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-shadow: 2px 2px 2px black;
+}
+
+button.start-button:hover {
+    opacity: .75;
+}
+
+section {
     display: block;
     flex-direction: column;
     text-align: center;
