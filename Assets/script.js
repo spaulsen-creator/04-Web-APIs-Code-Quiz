@@ -2,31 +2,31 @@ console.log("hello");
 
 var timeLeft = 0;
 var timer;
-var quizdata = [
+var quizData = [
     {
         question: "A short section of code written to perform a task is:",
-        option: ["<Arrays>", "<Boolean>", "<Function>", "<Number>"],
+        option: ["Arrays", "Boolean", "Function", "Number"],
         correct: "<Function>"
     },
     {
         question: "Standard mark-up language for creating webpages is:",
-        option: ["<HTML>", "<CSS>", "<JavaScript>", "<Bootstrap>"],
+        option: ["HTML", "CSS", "JavaScript", "Bootstrap"],
         correct: "<HTML>"
     },
     {
         question: "To style a webpage you use:",
-        option: ["<Padding>", "<Flex-box>", "<Templates>", "<CSS>"],
+        option: ["Padding", "Flex-box", "Templates", "CSS"],
         correct: "<CSS>"
     },
     {
         question: "Javascript can:",
-        option: ["<Change html content>", "<Change html styles>", "<Change html attribute values>", "<All of the above>"],
-        correct: "<All of the above>"
+        option: ["Change html content", "Change html styles>", "Change html attribute values", "All of the above"],
+        correct: "All of the above"
     },
     {
         question: "If your code does not work, what should you do:",
-        option: ["<Burn your computer, then burn the ashes>", "<Run around and scream madly>", "<Debug and check for any errors>", "<Sit and wait for it to fix itself>"],
-        correct: "<Debug and check for any errors>"
+        option: ["Burn your computer, then burn the ashes", "Run around and scream madly", "Debug and check for any errors", "Sit and wait for it to fix itself"],
+        correct: "Debug and check for any errors"
     },
 ]
 
@@ -46,7 +46,7 @@ function timerStart() {
     timer = setInterval(function() {
         timeLeft--;
         document.getElementById("timeLeft").innerHTML = timeLeft;
-        if (timeLeft <= 0 || currentQ >= quizdata.length) {
+        if (timeLeft <= 0 || currentQ >= quizData.length) {
             clearInterval(timer);
             endGame();
         }
@@ -54,7 +54,7 @@ function timerStart() {
 }
 
 function populateQuiz () {
-    if(currentQ < quizdata.length) {
+    if(currentQ < quizData.length) {
         document.querySelector("#question").textContent = quizData[currentQ].question
 
         var arrayOfElements = document.querySelectorAll("#option")
@@ -64,64 +64,23 @@ function populateQuiz () {
         }
     }
 }
-
-
-//localStorage.setItem('name', 'Shawn');  //look for the two values
-//let myName = localStorage.getItem('name');
-//myName
-
-
-var timerEl = document.getElementById('countdown');
-var mainEl = document.getElementById('main');
-
-//var message =
- // 'Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.';
-//var words = message.split(' ');
-
-// Timer that counts down from 5
-function countdown() {
-  var timeLeft = 75;
-
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function () {
-    // As long as the `timeLeft` is greater than 1
-    if (timeLeft > 1) {
-      // Set the `textContent` of `timerEl` to show the remaining seconds
-      timerEl.textContent = timeLeft;
-      // Decrement `timeLeft` by 1
-      timeLeft--;
-    } else if (timeLeft === 1) {
-      timerEl.textContent = timeLeft;
-      timeLeft--;
-    } else {
-      // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-      timerEl.textContent = '';
-      // Use `clearInterval()` to stop the timer
-      clearInterval(timeInterval);
-      // Call the `displayMessage()` function
-      displayMessage();
+//e = event
+function checkAndIterate(e) {
+    e.preventDefault()
+    console.log("clicked", e.target.textContent)
+    var optionPicked = e.target.textContent
+    if(optionPicked == quizData[currentQ].correct) {
+        currentQ++
+        populateQuiz()
+    }else {
+        timeLeft -= 10;
+        currentQ++
+        populateQuiz()
     }
-  }, 1000);
 }
 
-// Displays the message one word at a time
-function displayMessage() {
-  var wordCount = 0;
 
-  // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var msgInterval = setInterval(function () {
-    // If there are no more words left in the message
-    if (words[wordCount] === undefined) {
-      // Use `clearInterval()` to stop the timer
-      clearInterval(msgInterval);
-    } else {
-      // Display one word of the message
-      mainEl.textContent = words[wordCount];
-      wordCount++;
-    }
-  }, 1000);
-}
 
-countdown();
+
 
 
