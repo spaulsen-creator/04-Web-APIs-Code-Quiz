@@ -30,6 +30,41 @@ var quizdata = [
     },
 ]
 
+var currentQ;
+function start() {
+    currentQ = 0;
+    timerStart()
+    document.querySelector("#start-menu").setAttribute("class", "hide")
+    document.querySelector("#end-game").setAttribute("class", "hide")
+    document.querySelector("#quiz-content").setAttribute("class", "")
+    populateQuiz()
+}
+
+function timerStart() {
+    timeLeft = 75;
+    document.getElementById("timeLeft").innerHTML = timeLeft;
+    timer = setInterval(function() {
+        timeLeft--;
+        document.getElementById("timeLeft").innerHTML = timeLeft;
+        if (timeLeft <= 0 || currentQ >= quizdata.length) {
+            clearInterval(timer);
+            endGame();
+        }
+    }, 1000);
+}
+
+function populateQuiz () {
+    if(currentQ < quizdata.length) {
+        document.querySelector("#question").textContent = quizData[currentQ].question
+
+        var arrayOfElements = document.querySelectorAll("#option")
+        for(i=0; i<arrayOfElements.length; i++) {
+            arrayOfElements[i].textContent = quizData[currentQ].option[i]
+            arrayOfElements[i].addEventListener("click", checkAndIterate)
+        }
+    }
+}
+
 
 //localStorage.setItem('name', 'Shawn');  //look for the two values
 //let myName = localStorage.getItem('name');
